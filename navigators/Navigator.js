@@ -1,4 +1,4 @@
-import {createAppContainer} from 'react-navigation';
+import {createAppContainer, createSwitchNavigator} from 'react-navigation';
 import {createBottomTabNavigator} from 'react-navigation-tabs';
 import {createStackNavigator} from 'react-navigation-stack';
 import Home from '../views/Home';
@@ -40,7 +40,7 @@ const TabNavigator = createBottomTabNavigator({
   initialRouteName: 'Home',
 });
 
-const Navigator = createStackNavigator(
+const stackNavigator = createStackNavigator(
     // RouteConfigs
     {
       Home: {
@@ -49,7 +49,26 @@ const Navigator = createStackNavigator(
           header: null,
         },
       },
+      Signup: {
+        screen: Signup,
+      },
+      Single: {
+        screen: Single
+      },
+      ImageView: {
+        screen: ImageView,
+      },
     }
+);
+
+const Navigator = createSwitchNavigator(
+  {
+    App: stackNavigator,
+    Login: Login,
+  },
+  {
+    initialRouteName: 'Login',
+  }
 );
 
 export default createAppContainer(Navigator);

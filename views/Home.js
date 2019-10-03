@@ -1,9 +1,12 @@
 import React from 'react';
-import {Container, Content, Header, Text} from 'native-base';
+import {Container, Content, Header, Text, Button} from 'native-base';
 
 
 const Home = (props) => {
-    const {navigation} = props;
+    singleButton = () => {
+        props.navigation.navigate('Single');
+    };
+
     return (
         <Container>
             <Header>
@@ -11,6 +14,13 @@ const Home = (props) => {
                     Home page
                 </Text>
             </Header> 
+            <Content>
+                <Button onPress={singleButton}>
+                    <Text>
+                        Single post test
+                    </Text>
+                </Button>
+            </Content>
         </Container>
     );
 };
