@@ -17,6 +17,18 @@ const TabNavigator = createBottomTabNavigator({
       title: 'Home',
     },
   },
+  Search: {
+    screen: Search,
+    navigationOptions: {
+      title: 'Search',
+    },
+  },
+  Create: {
+    screen: Create,
+    navigationOptions: {
+      title: 'Create',
+    },
+  },
   Profile: {
     screen: Profile,
     navigationOptions: {
@@ -37,11 +49,7 @@ const Navigator = createStackNavigator(
           header: null,
         },
       },
-      Single: {
-        screen: Single,
-
-      },
-    },
+    }
 );
 
 export default createAppContainer(Navigator);
