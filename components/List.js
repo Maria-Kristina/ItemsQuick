@@ -13,7 +13,6 @@ const useFetch = (url) => {
     const response = await fetch(url);
     const json = await response.json();
     setMedia(json);
-    console.log(json);
     setLoading(false);
   };
   useEffect(fetchUrl, []);

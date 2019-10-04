@@ -21,10 +21,15 @@ const getThumbnail = (url) => {
 const ListItem = (props) => {
   const {navigation, singleMedia} = props;
   const tn = getThumbnail(props.singleMedia.file_id);
+  console.log('singleMedia props in ListItem: ', props.singleMedia);
   return (
     <BaseListItem onPress={
       ()=> {
-        navigation.push('Single', {file: singleMedia.filename, desc: singleMedia.description});
+          //file & desc used in imageview com from here
+          //v ei toimi, alkup, muoto
+        //navigation.push('Single', {file: singleMedia.filename, desc: singleMedia.description});
+        //navigation.navigate('Single');
+        navigation.push('Single', singleMedia);
       }
     }>
       <Right>

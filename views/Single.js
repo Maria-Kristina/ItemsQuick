@@ -1,10 +1,15 @@
 import React from 'react';
-import {Container, Content, Text, Header, Button} from 'native-base';
-import {setRecoveryProps} from 'expo/build/ErrorRecovery/ErrorRecovery';
+import {Container, Content, Text, Header, Button, Card, CardItem} from 'native-base';
+import {Image} from 'react-native';
+
 
 const Single = (props) => {
+    console.log('Props in Single: ', props);
+    console.log('Try catch singleMedia: ', props.navigation.getParam('description'));
     const imageViewButton = () => {
-        props.navigation.navigate('ImageView');
+        const {navigation} = props;
+        //file ja desc lähetetään ImageView
+        navigation.push('ImageView', {file: navigation.getParam('filename')});
     };
     return(
         <Container>
