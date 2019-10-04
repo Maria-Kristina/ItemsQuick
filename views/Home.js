@@ -1,5 +1,6 @@
 import React from 'react';
 import {Container, Content, Header, Text, Button} from 'native-base';
+import List from '../components/List';
 
 const Home = (props) => {
     const {navigation} = props;
@@ -14,11 +15,8 @@ const Home = (props) => {
                 </Text>
             </Header> 
             <Content>
-                <Button onPress={singleButton}>
-                    <Text>
-                        Single post test
-                    </Text>
-                </Button>
+                <List navigation={navigation}>
+                </List>
             </Content>
         </Container>
     );
