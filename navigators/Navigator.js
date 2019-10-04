@@ -49,9 +49,6 @@ const stackNavigator = createStackNavigator(
           header: null,
         },
       },
-      Signup: {
-        screen: Signup,
-      },
       Single: {
         screen: Single
       },
@@ -61,10 +58,21 @@ const stackNavigator = createStackNavigator(
     }
 );
 
+const loginNavigator = createStackNavigator(
+    {
+      Login: {
+        screen: Login
+      },
+      Signup: {
+        screen: Signup
+      },
+    },
+);
+
 const Navigator = createSwitchNavigator(
   {
     App: stackNavigator,
-    Login: Login,
+    Login: loginNavigator,
   },
   {
     initialRouteName: 'Login',
