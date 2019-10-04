@@ -1,12 +1,11 @@
 import React from 'react';
 import {Container, Content, Header, Text, Button} from 'native-base';
 
-
 const Home = (props) => {
+    const {navigation} = props;
     singleButton = () => {
         props.navigation.navigate('Single');
     };
-
     return (
         <Container>
             <Header>
