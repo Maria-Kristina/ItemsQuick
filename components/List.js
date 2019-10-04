@@ -13,6 +13,7 @@ const useFetch = (url) => {
     const response = await fetch(url);
     const json = await response.json();
     setMedia(json);
+    console.log(json);
     setLoading(false);
   };
   useEffect(fetchUrl, []);
@@ -20,7 +21,7 @@ const useFetch = (url) => {
 };
 
 const List = (props) => {
-  const [media, loading] = useFetch('http://media.mw.metropolia.fi/wbma/media/');
+  const [media, loading] = useFetch('http://media.mw.metropolia.fi/wbma/tags/items');
   return (
     <Container>
       <BaseList
