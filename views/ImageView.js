@@ -5,7 +5,6 @@ import {Image} from 'react-native';
 const ImageView = (props) => {
     const fileName = props.navigation.getParam('file');
     const url = 'http://media.mw.metropolia.fi/wbma/uploads/' + fileName;
-    console.log('Props in ImageView: ', props);
     return(
         <Container>
             <Header>

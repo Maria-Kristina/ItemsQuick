@@ -21,7 +21,6 @@ const getThumbnail = (url) => {
 const ListItem = (props) => {
   const {navigation, singleMedia} = props;
   const tn = getThumbnail(props.singleMedia.file_id);
-  console.log('singleMedia props in ListItem: ', props.singleMedia);
   return (
     <BaseListItem onPress={
       ()=> {

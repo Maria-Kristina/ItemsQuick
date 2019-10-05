@@ -4,8 +4,6 @@ import {Image} from 'react-native';
 
 
 const Single = (props) => {
-    console.log('Props in Single: ', props);
-    console.log('Try catch singleMedia: ', props.navigation.getParam('description'));
     const imageViewButton = () => {
         const {navigation} = props;
         //file ja desc lähetetään ImageView
