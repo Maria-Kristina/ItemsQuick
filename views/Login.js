@@ -15,7 +15,7 @@ const Login = (props) => {
         });
         const json = await response.json();
         await AsyncStorage.setItem('userToken', json.token);
-        // setting user data to asyncStorege (not sure if working)
+        // setting user data to asyncStorege
         await AsyncStorage.setItem('user', JSON.stringify(json.user));
         props.navigation.navigate('Home');
       };
