@@ -15,9 +15,8 @@ const Search = () => {
     const {inputs, handleSearchChange} = useSearchForm();
 
     const searchButton = () => {
-        //searchAsync('http://media.mw.metropolia.fi/wbma/tags/', inputs.search);
-        searchAsync('http://media.mw.metropolia.fi/wbma/tags/items');
-        console.log('Url fetched from: http://media.mw.metropolia.fi/wbma/tags/', inputs.search);
+        searchAsync('http://media.mw.metropolia.fi/wbma/tags/'+inputs.search);
+        console.log('Url fetched from: http://media.mw.metropolia.fi/wbma/tags/'+inputs.search);
     };
 
     return(
