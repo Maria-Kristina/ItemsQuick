@@ -1,5 +1,5 @@
 import React from 'react';
-import {Container, Content,Text, Header, Button} from 'native-base';
+import {Container, Content, Text, Header, Button} from 'native-base';
 import FormTextInput from '../components/FormTextInput';
 import useSignUpForm from '../hooks/LoginHooks';
 import {AsyncStorage} from 'react-native';
