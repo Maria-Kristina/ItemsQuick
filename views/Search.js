@@ -6,7 +6,7 @@ import useSearchForm from '../hooks/SearchHooks';
 
 const Search = () => {
 
-    //const {inputs, handleSearchChange} = useSearchForm();
+    const {inputs, handleSearchChange} = useSearchForm();
 
     return(
         <Container>
@@ -19,8 +19,8 @@ const Search = () => {
                 <FormTextInput
                 autoCapitalize='none'
                 placeholder='Search'
-                //onChangeText={handleSearchChange}
-                //value={inputs.search}
+                onChangeText={handleSearchChange}
+                value={inputs.search}
                 >
                 </FormTextInput>
             </Content>

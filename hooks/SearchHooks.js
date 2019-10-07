@@ -8,11 +8,12 @@ const useSearchForm = () => {
             ...inputs,
             search: text,
         }));
-        return {
+        console.log(text);   
+    };
+    return {
             handleSearchChange,
             inputs,
         };
-    };
 };
 
 export default useSearchForm;
