@@ -12,6 +12,11 @@ const Single = (props) => {
         //file ja desc lähetetään ImageView
         navigation.push('ImageView', {url: url});
     };
+
+    const toPaymentButton = () => {
+        navigation.push('Payment')
+    };
+    
     return(
         <Container>
             <Header>
@@ -27,6 +32,11 @@ const Single = (props) => {
                 <Button onPress={imageViewButton}>
                     <Text>
                         Image test
+                    </Text>
+                </Button>
+                <Button onPress={toPaymentButton}>
+                    <Text>
+                        Pay
                     </Text>
                 </Button>
             </Content>

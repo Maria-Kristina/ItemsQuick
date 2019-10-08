@@ -9,6 +9,7 @@ import ImageView from '../views/ImageView';
 import Login from '../views/Login';
 import Search from '../views/Search';
 import Signup from '../views/Signup';
+import Payment from '../views/Payment';
 
 const TabNavigator = createBottomTabNavigator({
   Home: {
@@ -54,6 +55,9 @@ const stackNavigator = createStackNavigator(
       },
       ImageView: {
         screen: ImageView,
+      },
+      Payment: {
+        screen: Payment,
       },
     }
 );
