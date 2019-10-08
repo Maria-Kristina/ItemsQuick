@@ -6,6 +6,11 @@ import useSignUpForm from '../hooks/SignUpHooks'
 
 const Signup = (props) => {
     const {inputs, handleUsernameChange, handlePasswordChange} = useSignUpForm();
+
+    const signUpButton = () => {
+        //Sign up post here
+    };
+
     return(
         <Container>
             <Header>
@@ -25,6 +30,11 @@ const Signup = (props) => {
                     secureTextEntry={true}
                     onChangeText={handlePasswordChange}
                     value={inputs.password} />
+                <Button onPress={signUpButton}>
+                    <Text>
+                        Sign up!
+                    </Text>
+                </Button>
             </Content>
         </Container>
     );
