@@ -1,16 +1,18 @@
 import React from 'react';
 import {Container, Text, Header} from 'native-base';
 
-const Create = () => {
+// Media upload page
+
+const Upload = () => {
     return(
         <Container>
             <Header>
                 <Text>
-                    Create page
+                    Post upload page
                 </Text>
             </Header>
         </Container>
     );
 };
 
-export default Create;
+export default Upload;

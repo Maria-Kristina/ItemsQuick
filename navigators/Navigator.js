@@ -4,7 +4,7 @@ import {createStackNavigator} from 'react-navigation-stack';
 import Home from '../views/Home';
 import Single from '../views/Single';
 import Profile from '../views/Profile';
-import Create from '../views/Create';
+import Upload from '../views/Upload';
 import ImageView from '../views/ImageView';
 import Login from '../views/Login';
 import Search from '../views/Search';
@@ -23,10 +23,10 @@ const TabNavigator = createBottomTabNavigator({
       title: 'Search',
     },
   },
-  Create: {
-    screen: Create,
+  Upload: {
+    screen: Upload,
     navigationOptions: {
-      title: 'Create',
+      title: 'Upload',
     },
   },
   Profile: {
