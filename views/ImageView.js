@@ -3,8 +3,8 @@ import {Container, Content, Text, Header, Button, Card, CardItem} from 'native-b
 import {Image} from 'react-native';
 
 const ImageView = (props) => {
-    const fileName = props.navigation.getParam('file');
-    const url = 'http://media.mw.metropolia.fi/wbma/uploads/' + fileName;
+    const url = props.navigation.getParam('url');
+    
     return(
         <Container>
             <Header>

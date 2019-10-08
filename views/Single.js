@@ -4,10 +4,13 @@ import {Image} from 'react-native';
 
 
 const Single = (props) => {
+    const {navigation} = props;
+    const fileName = navigation.getParam('filename');
+    const url = 'http://media.mw.metropolia.fi/wbma/uploads/' + fileName;
+
     const imageViewButton = () => {
-        const {navigation} = props;
         //file ja desc lähetetään ImageView
-        navigation.push('ImageView', {file: navigation.getParam('filename')});
+        navigation.push('ImageView', {url: url});
     };
     return(
         <Container>
@@ -17,6 +20,10 @@ const Single = (props) => {
                 </Text>
             </Header>
             <Content>
+                <Image
+                    source={{uri: url}}
+                    style={{height:100, width: 100}}>
+                </Image>
                 <Button onPress={imageViewButton}>
                     <Text>
                         Image test
