@@ -1,7 +1,7 @@
 import React from 'react';
 import {Container, Content, Text, Header, Button} from 'native-base';
 import FormTextInput from '../components/FormTextInput';
-import useSignUpForm from '../hooks/LoginHooks';
+import useLoginForm from '../hooks/LoginHooks';
 import {AsyncStorage} from 'react-native';
 
 
@@ -29,7 +29,7 @@ const Login = (props) => {
     };
     //button functions until here
 
-    const {inputs, handleUsernameChange, handlePasswordChange} = useSignUpForm();
+    const {inputs, handleUsernameChange, handlePasswordChange} = useLoginForm();
     //login button function
     const loginButton = () => {
         signInAsync('http://media.mw.metropolia.fi/wbma/login', inputs);
