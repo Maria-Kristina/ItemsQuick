@@ -15,7 +15,11 @@ const useFetch = (url) => {
     setMedia(json);
     setLoading(false);
   };
-  useEffect(fetchUrl, []);
+
+  useEffect(() => {
+    fetchUrl();
+  }, []);
+  
   return [media, loading];
 };
 
