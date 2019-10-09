@@ -6,29 +6,33 @@ import {AsyncStorage} from 'react-native';
 
 
 const Signup = (props) => {
-    const {inputs, handleUsernameChange, handlePasswordChange, handleEmailChange} = useSignUpForm();
+    const {inputs, handleUsernameChange, handlePasswordChange, handlePasswordAgainChange, handleEmailChange} = useSignUpForm();
 
     const signUpAsync = async (url, data) => {
-        const url2 = url+'username/'+inputs.username;
-        console.log('Url checked: ', url2);
-        const response = await fetch(url2);
-        const json = await response.json();
-        console.log('Checkusername answer: ', json);
-
-        if (json.available == true) {
-            console.log('true, next posting to server');
-            const response = await fetch(url, {
-            method: 'POST',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify(data),
-            });
+        if (inputs.password==inputs.passwordAgain) {
+            const url2 = url+'username/'+inputs.username;
+            const response = await fetch(url2);
             const json = await response.json();
-            console.log('Answer: ', json);
-        } else {
-            console.log('false');
+            console.log('password check ok')
+ 
+            // check if username is available
+            if (json.available == true) {
+                console.log('true, next posting to server');
+                const response = await fetch(url, {
+                method: 'POST',
+                headers: {'Content-Type': 'application/json'},
+                body: JSON.stringify(data),
+                });
+                const json = await response.json();
+                console.log('Answer: ', json);
+            } else {
+                console.log('false');
             
-        };
-        
+            };
+        }
+        else {
+            console.log('passwords not matching')
+        }
     };
 
     const  hdcbhjb = async (url, data) => {
@@ -63,6 +67,12 @@ const Signup = (props) => {
                     secureTextEntry={true}
                     onChangeText={handlePasswordChange}
                     value={inputs.password}/>
+                <FormTextInput
+                    autoCapitalize='none'
+                    placeholder='Password again'
+                    secureTextEntry={true}
+                    onChangeText={handlePasswordAgainChange}
+                    value={inputs.passwwordAgain}/>    
                 <FormTextInput
                     autoCapitalize='none'
                     placeholder='Email'

@@ -9,7 +9,6 @@ const useSignUpForm = () => {
         ...inputs,
         username: text,
       }));
-      console.log('SignUp username: ', text);
   };
   const handlePasswordChange = (text) => {
     setInputs((inputs) =>
@@ -17,7 +16,13 @@ const useSignUpForm = () => {
         ...inputs,
         password: text,
       }));
-      console.log('SignUp password: ', text);
+  };
+  const handlePasswordAgainChange = (text) => {
+    setInputs((inputs) =>
+      ({
+        ...inputs,
+        passwordAgain: text,
+      }));
   };
   const handleEmailChange = (text) => {
     setInputs((inputs) =>
@@ -25,11 +30,11 @@ const useSignUpForm = () => {
         ...inputs,
         email: text,
       }));
-      console.log('SignUp email: ', text);
   };
   return {
     handleUsernameChange,
     handlePasswordChange,
+    handlePasswordAgainChange,
     handleEmailChange,
     inputs,
   };
