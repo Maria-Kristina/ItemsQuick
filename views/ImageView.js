@@ -1,6 +1,8 @@
 import React from 'react';
-import {Container, Content, Text, Header, Button, Card, CardItem} from 'native-base';
+import {Container, Content, Text, Header, Card, CardItem} from 'native-base';
 import {Image} from 'react-native';
+
+// Post image page
 
 const ImageView = (props) => {
     const url = props.navigation.getParam('url');

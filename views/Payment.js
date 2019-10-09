@@ -1,6 +1,8 @@
 import React from 'react';
 import {Text, Container, Header, Content} from 'native-base';
 
+//Dummy payment page
+
 const Payment = (props) => {
     return (
         <Container>
@@ -11,11 +13,11 @@ const Payment = (props) => {
             </Header>
             <Content>
                 <Text>
-                    Tadaa!
+                    Pay using Visa etc.
                 </Text>
             </Content>
         </Container>
-    )
-}
+    );
+};
 
 export default Payment;

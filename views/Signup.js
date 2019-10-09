@@ -4,6 +4,7 @@ import FormTextInput from '../components/FormTextInput';
 import useSignUpForm from '../hooks/SignUpHooks';
 import {AsyncStorage} from 'react-native';
 
+//User register page
 
 const Signup = (props) => {
     const {inputs, handleUsernameChange, handlePasswordChange, handlePasswordAgainChange, handleEmailChange} = useSignUpForm();

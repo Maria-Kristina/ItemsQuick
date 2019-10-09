@@ -2,6 +2,7 @@ import React from 'react';
 import {Container, Content, Text, Header, Button, Card, CardItem} from 'native-base';
 import {Image} from 'react-native';
 
+// Single post page
 
 const Single = (props) => {
     const {navigation} = props;
@@ -9,7 +10,6 @@ const Single = (props) => {
     const url = 'http://media.mw.metropolia.fi/wbma/uploads/' + fileName;
 
     const imageViewButton = () => {
-        //file ja desc lähetetään ImageView
         navigation.push('ImageView', {url: url});
     };
 
@@ -36,7 +36,7 @@ const Single = (props) => {
                 </Button>
                 <Button onPress={toPaymentButton}>
                     <Text>
-                        Pay
+                        Buy
                     </Text>
                 </Button>
             </Content>

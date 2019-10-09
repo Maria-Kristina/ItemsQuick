@@ -4,6 +4,7 @@ import FormTextInput from '../components/FormTextInput';
 import useLoginForm from '../hooks/LoginHooks';
 import {AsyncStorage} from 'react-native';
 
+//Use login page
 
 const Login = (props) => {
     const signInAsync = async (url, data) => {
@@ -20,17 +21,12 @@ const Login = (props) => {
         props.navigation.navigate('Home');
       };
 
-    //button functions WILL BE DELETED LATER
-    const seeAppButton = () => {
-        props.navigation.navigate('Home');
-    };
     const signupButton = () => {
-        props.navigation.navigate('Signup');
+        props.navigation.navigate('Sign up');
     };
-    //button functions until here
 
     const {inputs, handleUsernameChange, handlePasswordChange} = useLoginForm();
-    //login button function
+
     const loginButton = () => {
         signInAsync('http://media.mw.metropolia.fi/wbma/login', inputs);
     };

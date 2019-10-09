@@ -3,6 +3,7 @@ import {Container, Content, Header, Text, Button} from 'native-base';
 import FormTextInput from '../components/FormTextInput';
 import useSearchForm from '../hooks/SearchHooks';
 
+//Post search page
 
 const Search = () => {
 

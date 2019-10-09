@@ -2,6 +2,8 @@ import React from 'react';
 import {Container, Content, Header, Text, Button} from 'native-base';
 import List from '../components/List';
 
+// Home page
+
 const Home = (props) => {
     const {navigation} = props;
     singleButton = () => {
