@@ -54,11 +54,6 @@ const Login = (props) => {
                         Login
                     </Text>
                 </Button>
-                <Button onPress={seeAppButton}>
-                    <Text>
-                        See app without login!
-                    </Text>
-                </Button>
                 <Button onPress={signupButton}>
                     <Text>
                         Create account
