@@ -22,7 +22,7 @@ const Login = (props) => {
       };
 
     const signupButton = () => {
-        props.navigation.navigate('Sign up');
+        props.navigation.navigate('Signup');
     };
 
     const {inputs, handleUsernameChange, handlePasswordChange} = useLoginForm();
@@ -61,7 +61,7 @@ const Login = (props) => {
                 </Button>
             </Content>
         </Container>
-    )
-}
+    );
+};
 
 export default Login;

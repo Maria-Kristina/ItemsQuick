@@ -7,6 +7,7 @@ import {Image} from 'react-native';
 const Single = (props) => {
     const {navigation} = props;
     const fileName = navigation.getParam('filename');
+    const description = navigation.getParam('description');
     const url = 'http://media.mw.metropolia.fi/wbma/uploads/' + fileName;
 
     const imageViewButton = () => {
@@ -27,8 +28,14 @@ const Single = (props) => {
             <Content>
                 <Image
                     source={{uri: url}}
-                    style={{height:100, width: 100}}>
+                    style={{height:100, width: 100}}
+                    >
                 </Image>
+                <Card>
+                    <Text>
+                        {description}
+                    </Text>
+                </Card>
                 <Button onPress={imageViewButton}>
                     <Text>
                         Image test
