@@ -18,6 +18,7 @@ const Signup = (props) => {
             console.log('password check ok')
  
             if (json.available == true) { // if username is available
+                
                 console.log('true, next posting to server');
                 const response = await fetch(url, {
                 method: 'POST',
@@ -26,8 +27,24 @@ const Signup = (props) => {
                 });
                 const json = await response.json();
                 console.log('Answer: ', json);
-                //log user in automatically
+                
 
+                //log user in automatically
+                const body = {username: inputs.username,
+                              password: inputs.password};
+                const autoLoginData = {
+                    method: 'POST',
+                    headers: {'Content-Type': 'application/json'},
+                    body: JSON.stringify(body),
+                }
+                console.log('AutoLoginData: ', autoLoginData);
+                const autoLogin = await fetch('http://media.mw.metropolia.fi/wbma/login/', autoLoginData);
+                const autoLoginJson = await autoLogin.json();
+                console.log(autoLoginJson); 
+                await AsyncStorage.setItem('userToken', autoLoginJson.token);
+                await AsyncStorage.setItem('user', JSON.stringify(autoLoginJson.user));
+                //navigate to home screen
+                props.navigation.navigate('Home');
 
             } else {
                 //tell user username not available!
