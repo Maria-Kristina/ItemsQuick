@@ -10,13 +10,14 @@ const Signup = (props) => {
 
     const signUpAsync = async (url, data) => {
         if (inputs.password==inputs.passwordAgain) {
+            //delete password check so it wont be sent to server
+            delete inputs.passwordAgain;
             const url2 = url+'username/'+inputs.username;
             const response = await fetch(url2);
             const json = await response.json();
             console.log('password check ok')
  
-            // check if username is available
-            if (json.available == true) {
+            if (json.available == true) { // if username is available
                 console.log('true, next posting to server');
                 const response = await fetch(url, {
                 method: 'POST',
@@ -25,24 +26,18 @@ const Signup = (props) => {
                 });
                 const json = await response.json();
                 console.log('Answer: ', json);
+                //log user in automatically
+
+
             } else {
-                console.log('false');
-            
+                //tell user username not available!
             };
         }
         else {
             console.log('passwords not matching')
+            //tell user passwords dont match!
         }
     };
-
-    const  hdcbhjb = async (url, data) => {
-        
-        
-        //await AsyncStorage.setItem('userToken', json.token);
-        // setting user data to asyncStorege
-        //await AsyncStorage.setItem('user', JSON.stringify(json.user));
-        //props.navigation.navigate('Home');
-      };
 
     const signUpButton = () => {
         signUpAsync('http://media.mw.metropolia.fi/wbma/users/', inputs);
@@ -72,7 +67,7 @@ const Signup = (props) => {
                     placeholder='Password again'
                     secureTextEntry={true}
                     onChangeText={handlePasswordAgainChange}
-                    value={inputs.passwwordAgain}/>    
+                    value={inputs.passwordAgain}/>    
                 <FormTextInput
                     autoCapitalize='none'
                     placeholder='Email'
