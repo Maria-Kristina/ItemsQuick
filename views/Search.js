@@ -2,10 +2,11 @@ import React from 'react';
 import {Container, Content, Header, Text, Button} from 'native-base';
 import FormTextInput from '../components/FormTextInput';
 import useSearchForm from '../hooks/SearchHooks';
+import List from '../components/List';
 
 //Post search page
 
-const Search = () => {
+const Search = (props) => {
 
     const searchAsync = async (url) => {
         const response = await fetch(url);
@@ -32,14 +33,15 @@ const Search = () => {
                 autoCapitalize='none'
                 placeholder='Search'
                 onChangeText={handleSearchChange}
-                value={inputs.search}
-                >
+                value={inputs.search}>
                 </FormTextInput>
                 <Button onPress={searchButton()}>
                     <Text>
                         Search
                     </Text>
                 </Button>
+                    <List navigation={props.navigation}>
+                </List>
             </Content>
         </Container>
     );
